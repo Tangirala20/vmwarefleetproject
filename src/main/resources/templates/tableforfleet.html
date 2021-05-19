@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Table</title>
+	<link rel="stylesheet" th:href="@{/css/stylefleet.css}">
+</head>
+<body>
+    <form class = "fleettable" th:action="@{/tableforfleet}" th:object="${fleet}" method="POST">
+	<center>
+		<table>
+			<thead>
+				<tr>
+					<th>Fleet-Number</th>
+					<td><input type="text" name="fleet_number" id="fleet_number"></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>Driver Assigned</th>
+					<td><input type="text" name="driver assigned" id="driver assigned"></td>
+				</tr>
+				<tr>
+					<th>Fleet Name</th>
+					<td><input type="text" name="fleet_name" id="fleet_name"></td>
+				</tr>
+				<tr>
+					<th>No of trips </th>
+					<td><input type="text" name="nooftrips" id="nooftrips"></td>
+				</tr>
+				<tr>
+					<th>Status</th>
+					<td><input type="text" name="status" id="status"></td>
+				</tr>
+				<tr id="btna">
+					<td colspan="2"><input type="button" name="button" id="btn" value="Add" onclick="AddRow()"></td>
+				</tr>
+			</tbody>
+		</table>
+      
+		<table border="4" id="show">
+			<thead>
+				<tr>
+					<th>Fleet-Number</th>
+					<th>Driver Assigned</th>
+					<th>Fleet Name</th>
+					<th>No of trips</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+		</table>
+	</center>
+	</form>
+	<script>
+		
+		var list1 = [];
+		var list2 = [];
+		var list3 = [];
+		var list4 = [];
+		var list5 = [];
+
+		var n = 1;
+		var x = 0;
+
+		function AddRow(){
+
+			var AddRown = document.getElementById('show');
+			var NewRow = AddRown.insertRow(n);
+
+			list1[x] = document.getElementById("fleet_number").value;
+			list2[x] = document.getElementById("driver assigned").value;
+			list3[x] = document.getElementById("fleet_name").value;
+			list4[x] = document.getElementById("nooftrips").value;
+			list5[x] = document.getElementById("status").value;
+
+			var cel1 = NewRow.insertCell(0);
+			var cel2 = NewRow.insertCell(1);
+			var cel3 = NewRow.insertCell(2);
+			var cel4 = NewRow.insertCell(3);
+            var cel5 = NewRow.insertCell(4);
+			cel1.innerHTML = list1[x];
+			cel2.innerHTML = list2[x];
+			cel3.innerHTML = list3[x];
+			cel4.innerHTML = list4[x];
+			cel5.innerHTML = list5[x];
+
+			n++;
+			x++;
+		}
+
+	</script>
+</body>
+</html>

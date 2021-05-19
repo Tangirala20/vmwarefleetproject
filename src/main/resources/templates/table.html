@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Table</title>
+	<link rel="stylesheet" th:href="@{/css/styleone.css}">
+</head>
+<body>
+    <form "th:action="@{/driverinfo}" th:object="${driver}" method="POST">
+	<center>
+		<table border="4>
+			
+			<tbody>
+			<tr>
+					<th>Login_id</th>
+					<td><input type="text" name="login_id" id="login_id" required="true"></td>
+				</tr>
+				<tr>
+					<th>Driver Name</th>
+					<td><input type="text" name="driver_name" id="driver_name" required="true" ></td>
+				</tr>
+				<tr>
+					<th>Fleet Assigned</th>
+					<td><input type="text" name="fleet_assigned" id="fleet_assigned" required="true" ></td>
+				</tr>
+				<tr>
+					<th>Password</th>
+					<td><input type="password" name="password" id="password" required="true" ></td>
+				</tr>
+				<tr id="btna">
+					<td colspan="2"><input type="submit" name="button" id="btn" value="Add" onclick="AddRow()"></td>
+				</tr>
+			</tbody>
+		</table>
+       </form>
+		<table border="4" id="show">
+			<thead>
+				<tr>
+					<th>Login-id</th>
+					<th>Driver-Name</th>
+					<th>Fleet Assigned</th>
+					<th>Password</th>
+				</tr>
+			</thead>
+		</table>
+	</center>
+	
+	<script>
+		
+		var list1 = [];
+		var list2 = [];
+		var list3 = [];
+		var list4 = [];
+
+		var n = 1;
+		var x = 0;
+
+		function AddRow(){
+
+			var AddRown = document.getElementById('show');
+			var NewRow = AddRown.insertRow(n);
+
+			list1[x] = document.getElementById("login_id").value;
+			list2[x] = document.getElementById("driver_name").value;
+			list3[x] = document.getElementById("fleet_assigned").value;
+			list4[x] = document.getElementById("password").value;
+
+			var cel1 = NewRow.insertCell(0);
+			var cel2 = NewRow.insertCell(1);
+			var cel3 = NewRow.insertCell(2);
+			var cel4 = NewRow.insertCell(3);
+
+			cel1.innerHTML = list1[x];
+			cel2.innerHTML = list2[x];
+			cel3.innerHTML = list3[x];
+			cel4.innerHTML = list4[x];
+
+			n++;
+			x++;
+		}
+
+	</script>
+
+</body>
+</html>
