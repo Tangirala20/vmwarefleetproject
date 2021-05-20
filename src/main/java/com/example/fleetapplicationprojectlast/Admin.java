@@ -11,16 +11,16 @@ public class Admin {
 	 @GeneratedValue(strategy = GenerationType.AUTO)
 	 private long userid;
 	private String email;
+	private String username;
+	private String password;
+	private boolean isEnabled=false;
+
 	public long getUserid() {
 		return userid;
 	}
 	public void setUserid(long userid) {
 		this.userid = userid;
 	}
-	private String username;
-	private String password;
-	private boolean isEnabled=false;
-	//private String email;
 	public String getUsername() {
 		return username;
 	}
