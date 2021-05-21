@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Fleet</title>
+
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="icon" type="image/png" href="img/AT-pro-logo.png"/>
+
+	<!-- Import lib -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+	<link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<!-- End import lib -->
+
+	<link rel="stylesheet" type="text/css" href="css/beaut.css">
+</head>
+<body class="overlay-scrollbar">
+	<!-- navbar -->
+	<div class="navbar">
+		<!-- nav left -->
+		<ul class="navbar-nav">
+			<li class="nav-item">
+				<a class="nav-link">
+					<i class="fas fa-bars" onclick="collapseSidebar()"></i>
+				</a>
+			</li>
+			<li class="nav-item">
+				<img src="img/fleet.jpeg" alt="ATPro logo" class="logo logo-light">
+				<img src="img/fleet.jpeg" alt="ATPro logo" class="logo logo-dark">
+			</li>
+		</ul>
+		<!-- end nav left -->
+		<!-- form -->
+		<form class="navbar-search">
+			<input type="text" name="Search" class="navbar-search-input" placeholder="What you looking for...">
+			<i class="fas fa-search"></i>
+		</form>
+		<!-- end form -->
+		<!-- nav right -->
+		<ul class="navbar-nav nav-right">
+			<li class="nav-item mode">
+				<a class="nav-link" href="#" onclick="switchTheme()">
+					<i class="fas fa-moon dark-icon"></i>
+					<i class="fas fa-sun light-icon"></i>
+				</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link">
+					<i class="fab fa-bell dropdown-toggle" data-toggle="notification-menu"></i>
+					<span class="navbar-badge">15</span>
+				</a>
+				<ul id="notification-menu" class="dropdown-menu notification-menu">
+					<div class="dropdown-menu-header">
+						<span>
+							Notifications
+						</span>
+					</div>
+					<div class="dropdown-menu-content overlay-scrollbar scrollbar-hover">
+						<li class="dropdown-menu-item">
+							<a href="#" class="dropdown-menu-link">
+								<div>
+									<i class="fas fa-gift"></i>
+								</div>
+								<span>
+									Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+									<br>
+									<span>
+										15/07/2020
+									</span>
+								</span>
+							</a>
+						</li>
+						<li class="dropdown-menu-item">
+							<a href="#" class="dropdown-menu-link">
+								<div>
+									<i class="fas fa-tasks"></i>
+								</div>
+								<span>
+									Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+									<br>
+									<span>
+										15/07/2020
+									</span>
+								</span>
+							</a>
+						</li>
+						<li class="dropdown-menu-item">
+							<a href="#" class="dropdown-menu-link">
+								<div>
+									<i class="fas fa-gift"></i>
+								</div>
+								<span>
+									Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+									<br>
+									<span>
+										15/07/2020
+									</span>
+								</span>
+							</a>
+						</li>
+						<li class="dropdown-menu-item">
+							<a href="#" class="dropdown-menu-link">
+								<div>
+									<i class="fas fa-tasks"></i>
+								</div>
+								<span>
+									Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+									<br>
+									<span>
+										15/07/2020
+									</span>
+								</span>
+							</a>
+						</li>
+						<li class="dropdown-menu-item">
+							<a href="#" class="dropdown-menu-link">
+								<div>
+									<i class="fas fa-gift"></i>
+								</div>
+								<span>
+									Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+									<br>
+									<span>
+										15/07/2020
+									</span>
+								</span>
+							</a>
+						</li>
+						<li class="dropdown-menu-item">
+							<a href="#" class="dropdown-menu-link">
+								<div>
+									<i class="fas fa-tasks"></i>
+								</div>
+								<span>
+									Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+									<br>
+									<span>
+										15/07/2020
+									</span>
+								</span>
+							</a>
+						</li>
+						<li class="dropdown-menu-item">
+							<a href="#" class="dropdown-menu-link">
+								<div>
+									<i class="fas fa-gift"></i>
+								</div>
+								<span>
+									Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+									<br>
+									<span>
+										15/07/2020
+									</span>
+								</span>
+							</a>
+						</li>
+						<li class="dropdown-menu-item">
+							<a href="#" class="dropdown-menu-link">
+								<div>
+									<i class="fas fa-tasks"></i>
+								</div>
+								<span>
+									Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+									<br>
+									<span>
+										15/07/2020
+									</span>
+								</span>
+							</a>
+						</li>
+						<li class="dropdown-menu-item">
+							<a href="#" class="dropdown-menu-link">
+								<div>
+									<i class="fas fa-gift"></i>
+								</div>
+								<span>
+									Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+									<br>
+									<span>
+										15/07/2020
+									</span>
+								</span>
+							</a>
+						</li>
+						<li class="dropdown-menu-item">
+							<a href="#" class="dropdown-menu-link">
+								<div>
+									<i class="fab fa-tasks"></i>
+								</div>
+								<span>
+									Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+									<br>
+									<span>
+										15/07/2020
+									</span>
+								</span>
+							</a>
+						</li>
+						<li class="dropdown-menu-item">
+							<a href="#" class="dropdown-menu-link">
+								<div>
+									<i class="fas fa-gift"></i>
+								</div>
+								<span>
+									Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+									<br>
+									<span>
+										15/07/2020
+									</span>
+								</span>
+							</a>
+						</li>
+						<li class="dropdown-menu-item">
+							<a href="#" class="dropdown-menu-link">
+								<div>
+									<i class="fas fa-tasks"></i>
+								</div>
+								<span>
+									Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+									<br>
+									<span>
+										15/07/2020
+									</span>
+								</span>
+							</a>
+						</li>
+					</div>
+					<div class="dropdown-menu-footer">
+						<span>
+							View all notifications
+						</span>
+					</div>
+				</ul>
+			</li>
+			<li class="nav-item avt-wrapper">
+				<div class="avt dropdown">
+					<img src="img/user.jpg" alt="User image" class="dropdown-toggle" data-toggle="user-menu">
+					<ul id="user-menu" class="dropdown-menu">
+						<li  class="dropdown-menu-item">
+							<a class="dropdown-menu-link">
+								<div>
+									<i class="fab fa-user-tie"></i>
+								</div>
+								<span>Profile</span>
+							</a>
+						</li>
+						<li class="dropdown-menu-item">
+							<a href="#" class="dropdown-menu-link">
+								<div>
+									<i class="fab fa-cog"></i>
+								</div>
+								<span>Settings</span>
+							</a>
+						</li>
+						<li  class="dropdown-menu-item">
+							<a href="#" class="dropdown-menu-link">
+								<div>
+									<i class="far fa-credit-card"></i>
+								</div>
+								<span>Payments</span>
+							</a>
+						</li>
+						<li  class="dropdown-menu-item">
+							<a href="#" class="dropdown-menu-link">
+								<div>
+									<i class="fab fa-spinner"></i>
+								</div>
+								<span>Projects</span>
+							</a>
+						</li>
+						<li  class="dropdown-menu-item">
+							<a href="index" class="dropdown-menu-link">
+								<div>
+									<i class="fab fa-sign-out-alt"></i>
+								</div>
+								<span>Logout</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+		<!-- end nav right -->
+	</div>
+	<!-- end navbar -->
+	<!-- sidebar -->
+	<div class="sidebar">
+		<ul class="sidebar-nav">
+			<li class="sidebar-nav-item">
+				<a href="#" class="sidebar-nav-link">
+					<div>
+						<i class="fab fa-tachometer-alt"></i>
+					</div>
+					<span>
+						Dashboard
+					</span>
+				</a>
+			</li>
+			<li class="sidebar-nav-item">
+				<a href="#" class="sidebar-nav-link active">
+					<div>
+						<i class="fab fa-accusoft"></i>
+					</div>
+					<span>Home</span>
+				</a>
+			</li>
+			<li  class="sidebar-nav-item">
+				<a href="#" class="sidebar-nav-link">
+					<div>
+						<i class="fas fa-map-marker"></i>
+					</div>
+					<span>Active-fleet-monitoring(MAPS)</span>
+				</a>
+			</li>
+			<li  class="sidebar-nav-item">
+				<a href="reports" class="sidebar-nav-link">
+					<div>
+						<i class="fas fa-comments"></i>
+					</div>
+					<span>Reports</span>
+				</a>
+			</li>
+			<li  class="sidebar-nav-item">
+				<a href="table" class="sidebar-nav-link">
+					<div>
+						<i class="fas fa-car"></i>
+					</div>
+					<span>Drivers-List</span>
+				</a>
+			</li>
+			<li  class="sidebar-nav-item">
+				<a href="tableforfleet" class="sidebar-nav-link">
+					<div>
+						<i class="fas fa-chart-line"></i>
+					</div>
+					<span>Fleet-list</span>
+				</a>
+			</li>
+			<li  class="sidebar-nav-item">
+				<a href="insurance" class="sidebar-nav-link">
+					<div>
+						<i class="fas fa-id-card-o"></i>
+					</div>
+					<span>Insurance Details</span>
+				</a>
+			</li>
+			<li  class="sidebar-nav-item">
+				<a href="www.gmail.com" class="sidebar-nav-link">
+					<div>
+						<i class="fas fa-bell"></i>
+					</div>
+					<span>Alert System</span>
+				</a>
+			</li>
+			<li  class="sidebar-nav-item">
+				<a href="service" class="sidebar-nav-link">
+					<div>
+						<i class="fas fa-wrench"></i>
+					</div>
+					<span>Servicing</span>
+				</a>
+			</li>
+			<li  class="sidebar-nav-item">
+				<a href="index" class="sidebar-nav-link">
+					<div>
+						<i class="fas fa-adjust"></i>
+					</div>
+					<span>Logout</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- end sidebar -->
+	<!-- main content -->
+	<div class="wrapper">
+		<div class="row">
+			<div class="col-3 col-m-6 col-sm-6">
+				<div class="counter bg-primary">
+					<p>
+						<i class="fab fa-tasks"></i>
+					</p>
+					<h3>56</h3>
+					<p>Fleets-Available</p>
+				</div>
+			</div>
+			<div class="col-3 col-m-6 col-sm-6">
+				<div class="counter bg-warning">
+					<p>
+						<i class="fab fa-spinner"></i>
+					</p>
+					<h3>48</h3>
+					<p>Fleets-Active</p>
+				</div>
+			</div>
+			<div class="col-3 col-m-6 col-sm-6">
+				<div class="counter bg-success">
+					<p>
+						<i class="fab fa-check-circle"></i>
+					</p>
+					<h3>20k</h3>
+					<p>Trips</p>
+				</div>
+			</div>
+			<div class="col-3 col-m-6 col-sm-6">
+				<div class="counter bg-danger">
+					<p>
+						<i class="fab fa-bug"></i>
+					</p>
+					<h3>25</h3>
+					<p>Places covered</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-8 col-m-12 col-sm-12">
+				<div class="card">
+					<div class="card-header">
+						<h3>
+							FLEET-MONITORING
+						</h3>
+						<i class="fab fa-ellipsis-h"></i>
+					</div>
+					<div class="card-content">
+						<table>
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Vehicle number</th>
+									<th>Driver</th>
+									<th>Amount to be paid</th>
+									<th>Current-Status</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>A563JS</td>
+									<td>Ben</td>
+									<td>
+										<span class="dot">
+											<i class="bg-danger"></i>
+											$500
+										</span>
+									</td>
+									<td>Active</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>RHE666</td>
+									<td>Edward</td>
+									<td>
+										<span class="dot">
+											<i class="bg-warning"></i>
+											$350
+										</span>
+									</td>
+									<td>Break</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>LI765</td>
+									<td>Stanley</td>
+									<td>
+										
+											$60
+					
+									</td>
+									<td>NA</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>DF432</td>
+									<td>Ruth</td>
+									<td>
+										
+											-
+										
+									</td>
+									<td>Active</td>
+								</tr>
+								<tr>
+									<td>5</td>
+									<td>MJ675</td>
+									<td>Evan</td>
+									<td>
+										
+											-
+										</span>
+									</td>
+									<td>Active</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td>MERN</td>
+									<td>Robert</td>
+									<td>
+										
+											$45
+										</span>
+									</td>
+									<td>Active</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-4 col-m-12 col-sm-12">
+				<div class="card">
+					<div class="card-header">
+						<h3>
+							Progress bar
+						</h3>
+						<i class="fab fa-ellipsis-h"></i>
+					</div>
+					<div class="card-content">
+						<div class="progress-wrapper">
+							<p>
+								Profits per week
+								<span class="float-right">50%</span>
+							</p>
+							<div class="progress">
+								<div class="bg-success" style="width: 50%"></div>
+							</div>
+						</div>
+						<div class="progress-wrapper">
+							<p>
+								Isuues raised
+								<span class="float-right">60%</span>
+							</p>
+							<div class="progress">
+								<div class="bg-warning" style="width:30%"></div>
+							</div>
+						</div>
+						<div class="progress-wrapper">
+							<p>
+							         Issues solved
+								<span class="float-right">40%</span>
+							</p>
+							<div class="progress">
+								<div class="bg-primary" style="width:40%"></div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	<!-- end main content -->
+	<!-- import script -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+	<script src="javascript/index.js"></script>
+	<!-- end import script -->
+</body>
+</html>

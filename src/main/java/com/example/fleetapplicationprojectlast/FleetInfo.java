@@ -9,7 +9,7 @@ public class FleetInfo {
 	private String fleet_number;
 	private String fleet_name;
 	private String driver_assigned;
-	private String status;
+	private String fleet_status;
 	private String nooftrips;
 	public String getFleet_name() {
 		return fleet_name;
@@ -29,11 +29,11 @@ public class FleetInfo {
 	public void setDriver_assigned(String driver_assigned) {
 		this.driver_assigned = driver_assigned;
 	}
-	public String getStatus() {
-		return status;
+	public String getFleet_status() {
+		return fleet_status;
 	}
-	public void setStatus(String status) {
-		this.status = status;
+	public void setFleet_status(String fleet_status) {
+		this.fleet_status = fleet_status;
 	}
 	public String getNooftrips() {
 		return nooftrips;

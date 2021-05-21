@@ -1,0 +1,18 @@
+.table{
+	margin-top: 50px;
+	text-align: center;
+	background: #C38D9E;
+	color: #E27D60;
+}
+.form button:hover,.form button:active
+{
+background:#E27D60;
+}
+
+#show th, #show td{
+	padding: 13px;
+}
+
+#btna td input{
+	width: 100%;
+}
