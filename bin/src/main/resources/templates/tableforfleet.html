@@ -5,38 +5,38 @@
 	<link rel="stylesheet" th:href="@{/css/stylefleet.css}">
 </head>
 <body>
-    <form class = "fleettable" th:action="@{/fleetinfo}" th:object="${fleet}" method="POST">
+    <form class = "fleettable" th:action="@{/tableforfleet}" th:object="${fleet}" method="POST">
 	<center>
 		<table>
-			<tbody>
+			<thead>
 				<tr>
 					<th>Fleet-Number</th>
 					<td><input type="text" name="fleet_number" id="fleet_number"></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>Driver Assigned</th>
+					<td><input type="text" name="driver assigned" id="driver assigned"></td>
 				</tr>
 				<tr>
 					<th>Fleet Name</th>
 					<td><input type="text" name="fleet_name" id="fleet_name"></td>
 				</tr>
 				<tr>
-					<th>Driver Assigned</th>
-					<td><input type="text" name="driver_assigned" id="driver assigned"></td>
-				</tr>
-				<tr>
-					<th>Status</th>
-					<td><input type="text" name="fleet_status" id="status"></td>
-				</tr>
-				<tr>
 					<th>No of trips </th>
 					<td><input type="text" name="nooftrips" id="nooftrips"></td>
 				</tr>
+				<tr>
+					<th>Status</th>
+					<td><input type="text" name="status" id="status"></td>
+				</tr>
 				<tr id="btna">
-					<td colspan="2"><button type="submit">Submit</button></td>
+					<td colspan="2"><input type="button" name="button" id="btn" value="Add" onclick="AddRow()"></td>
 				</tr>
 			</tbody>
 		</table>
-	</center>
-      </form>
-      <center>
+      
 		<table border="4" id="show">
 			<thead>
 				<tr>
@@ -47,18 +47,10 @@
 					<th>Status</th>
 				</tr>
 			</thead>
-			<tbody>
-				    <tr th:each="job : ${fleets}">
-			            <th th:text="${job.fleet_number}"></td>
-			            <td><a href="#" th:text="${job.driver_assigned}"></a></td>
-			            <td th:text="${job.fleet_name}"></td>
-			            <td th:text="${job.nooftrips}"></td>
-			            <td th:text="${job.fleet_status}"></td>
-			        </tr>
-				  </tbody>
 		</table>
 	</center>
-	<!--<script>
+	</form>
+	<script>
 		
 		var list1 = [];
 		var list2 = [];
@@ -95,6 +87,6 @@
 			x++;
 		}
 
-	</script>-->
+	</script>
 </body>
 </html>
