@@ -1,7 +1,6 @@
 package com.example.fleetapplicationprojectlast;
 
 
-
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,13 +15,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
-@EnableAutoConfiguration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-	
-	
-	
+
 	    @Bean
 	    public UserDetailsService userDetailsService() {
 	        return new CustomUserDetailsService();
@@ -42,7 +37,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	        auth.authenticationProvider(authenticationProvider());
 	        
 	    }
-	   
 
 
 		@Override
@@ -52,7 +46,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	            .anyRequest().permitAll()
 	            .and()
 	            .formLogin()
-	            .loginPage("/")
+					.loginPage("/")
 	                .usernameParameter("username")
 	                .defaultSuccessUrl("/trial")
 	                .permitAll()

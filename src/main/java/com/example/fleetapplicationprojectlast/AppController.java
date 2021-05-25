@@ -51,18 +51,25 @@ public class AppController {
 		return "table";
 	}
 	@PostMapping("/driverinfo")
-	public String create(@ModelAttribute("driver") DriverInfo driverinfo) {
+	public ModelAndView create(ModelAndView mav, DriverInfo driverinfo) {
 		drivRepo.save(driverinfo);
-		return "table";
+		mav.addObject("drivers", drivRepo.findAll());
+		mav.setViewName("table");
+		return mav;
 	}
 	@GetMapping("/tableforfleet")
 	public String tableforfleet() {
 		return "tableforfleet";
 	}
 	@PostMapping("/fleetinfo")
-	public String create(@ModelAttribute("fleet") FleetInfo fleetinfo) {
-		fleetRepo.save(fleetinfo);
-		return "tableforfleet";
+	public ModelAndView create(ModelAndView mav, FleetInfo fleet) {
+		System.out.println(fleet.getDriver_assigned());
+		System.out.println(fleet.getFleet_name());
+		System.out.println(fleet.getFleet_number());
+		fleetRepo.save(fleet);
+		mav.addObject("fleets", fleetRepo.findAll());
+		mav.setViewName("tableforfleet");
+		return mav;
 	}
 	
 	@GetMapping("/insurance")
@@ -94,6 +101,8 @@ public class AppController {
 	    {
 
 	    	Admin existingUser = adminRepo.findByEmail(admin.getEmail());
+			BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
 	        if(existingUser != null)
 	        {
 	            modelAndView.addObject("message","This email already exists!");
@@ -101,6 +110,9 @@ public class AppController {
 	        }
 	        else
 	        {
+
+				String encodedPassword = passwordEncoder.encode(admin.getPassword());
+				admin.setPassword(encodedPassword);
 	            adminRepo.save(admin);
 
 	            ConfirmationToken confirmationToken = new ConfirmationToken(admin);

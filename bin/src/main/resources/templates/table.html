@@ -5,10 +5,9 @@
 	<link rel="stylesheet" th:href="@{/css/styleone.css}">
 </head>
 <body>
-	<a href="/trial">HOME</a>
-    <form th:action="@{/driverinfo}" th:object="${driver}" method="POST">
+    <form "th:action="@{/driverinfo}" th:object="${driver}" method="POST">
 	<center>
-		<table border="4">
+		<table border="4>
 			
 			<tbody>
 			<tr>
@@ -28,7 +27,7 @@
 					<td><input type="password" name="password" id="password" required="true" ></td>
 				</tr>
 				<tr id="btna">
-					<td colspan="2"><button type="submit" id="btn" onclick="AddRow()">Submit</button></td>
+					<td colspan="2"><input type="submit" name="button" id="btn" value="Add" onclick="AddRow()"></td>
 				</tr>
 			</tbody>
 		</table>
@@ -42,18 +41,10 @@
 					<th>Password</th>
 				</tr>
 			</thead>
-			<tbody>
-				    <tr th:each="job : ${drivers}">
-			            <th th:text="${job.login_id}"></td>
-			            <td><a href="#" th:text="${job.driver_name}"></a></td>
-			            <td th:text="${job.fleet_assigned}"></td>
-			            <td th:text="${job.password}"></td>
-			        </tr>
-				  </tbody>
 		</table>
 	</center>
 	
-	<!--<script>
+	<script>
 		
 		var list1 = [];
 		var list2 = [];
@@ -87,7 +78,7 @@
 			x++;
 		}
 
-	</script>-->
+	</script>
 
 </body>
 </html>
